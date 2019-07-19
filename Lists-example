@@ -28,33 +28,34 @@ Yapilanlar=[]
 while True:
     print("Yapilacaklar:", YAPILACAKLAR)
     islem = input("isleminiz:")
-    for i in islem:
-        if i == "1":
-            ekleme = input("Eklenecekleri giriniz:")
-            YAPILACAKLAR.append(ekleme)
-            print("dosyaya ekleniyor...")
-        elif i=="2":
-            try:
-                silme=input("Silinecek Gorev numarasi girin:")
-                silme1=int(silme)-1
-                del YAPILACAKLAR[silme1]
-                print("Gorev siliniyor...")
-            except:
-                print("Listenin disinda bir sayi girdiniz veya sayisal degeri olmayan birsey girdiniz!")
-        elif i=="3":
-            try:
-                tam=input("Tamamlanan gorev numarasini giriniz:")
-                tam1=int(tam)-1
-                value=YAPILACAKLAR.pop(tam1)
-                Yapilanlar.append(value)
-                print("Yapilanlar:",Yapilanlar)
-            except:
-                print("Girmis oldugunuz sayi gecersizdir.")
-        elif i=="4":
-            print("Yapilanlar:",Yapilanlar)
-        elif i=="5":
-            YAPILACAKLAR.clear()
-            print("Yapilacaklar:","Su an yapilacaklar listeniz bos!")
-        elif i=="6":
-            quit()
+
+    if islem == "1":
+        ekleme = input("Eklenecekleri giriniz:")
+        YAPILACAKLAR.append(ekleme)
+        print("dosyaya ekleniyor...")
+    elif islem == "2":
+        try:
+            silme = input("Silinecek Gorev numarasi girin:")
+            silme1 = int(silme) - 1
+            del YAPILACAKLAR[silme1]
+            print("Gorev siliniyor...")
+        except:
+            print("Listenin disinda bir sayi girdiniz veya sayisal degeri olmayan birsey girdiniz!")
+    elif islem == "3":
+        try:
+            tam = input("Tamamlanan gorev numarasini giriniz:")
+            tam1 = int(tam) - 1
+            value = YAPILACAKLAR.pop(tam1)
+            Yapilanlar.append(value)
+            print("Yapilanlar:", Yapilanlar)
+        except:
+            print("Girmis oldugunuz sayi gecersizdir.")
+    elif islem == "4":
+        print("Yapilanlar:", Yapilanlar)
+    elif islem == "5":
+        YAPILACAKLAR.clear()
+        print("Yapilacaklar:", "Su an yapilacaklar listeniz bos!")
+    elif islem == "6":
+        quit()
+
 
